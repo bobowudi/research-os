@@ -10,8 +10,8 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
-    "@research-os/shared": "*",
-    "@research-os/database": "*",
+    "@research-os/shared": "workspace:*",
+    "@research-os/database": "workspace:*",
     "next": "^14.2.0",
     "react": "^18.3.0",
     "react-dom": "^18.3.0",

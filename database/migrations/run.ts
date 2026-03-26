@@ -3,7 +3,11 @@
 import { Kysely, MysqlDialect, Migrator, FileMigrationProvider } from 'kysely'
 import { createPool } from 'mysql2'
 import * as path from 'path'
-import * as fs from 'fs'
+import { promises as fs } from 'fs'
+import { fileURLToPath } from 'url'
+
+const __filename = fileURLToPath(import.meta.url)
+const __dirname = path.dirname(__filename)
 
 async function runMigrations() {
   const pool = createPool({
@@ -23,7 +27,7 @@ async function runMigrations() {
     provider: new FileMigrationProvider({
       fs,
       path,
-      migrationFolder: path.join(__dirname, '.'),
+      migrationFolder: __dirname,
     }),
   })
 

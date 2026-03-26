@@ -11,7 +11,7 @@
     "typecheck": "vue-tsc --noEmit"
   },
   "dependencies": {
-    "@research-os/shared": "*",
+    "@research-os/shared": "workspace:*",
     "vue": "^3.5.0",
     "vue-router": "^4.5.0",
     "pinia": "^2.3.0",
