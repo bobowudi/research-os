@@ -1,0 +1,28 @@
+{
+  "name": "@research-os/frontend",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "lint": "eslint . --ext .vue,.ts,.tsx",
+    "typecheck": "vue-tsc --noEmit"
+  },
+  "dependencies": {
+    "@research-os/shared": "*",
+    "vue": "^3.5.0",
+    "vue-router": "^4.5.0",
+    "pinia": "^2.3.0",
+    "axios": "^1.7.0",
+    "@vueuse/core": "^12.5.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^5.2.0",
+    "typescript": "^5.7.0",
+    "vite": "^6.2.0",
+    "vue-tsc": "^2.2.0",
+    "@types/node": "^22.0.0"
+  }
+}

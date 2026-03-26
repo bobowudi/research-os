@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "lib": ["ES2022"],
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "paths": {
+      "@research-os/shared": ["./shared/src"],
+      "@research-os/shared/*": ["./shared/src/*"],
+      "@research-os/database": ["./database"],
+      "@research-os/database/*": ["./database/*"]
+    }
+  },
+  "exclude": ["node_modules", "dist", ".next"]
+}

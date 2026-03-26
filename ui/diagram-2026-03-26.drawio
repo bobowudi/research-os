@@ -1,0 +1,301 @@
+<mxfile host="65bd71144e">
+    <diagram name="Page-1" id="page-1">
+        <mxGraphModel dx="956" dy="713" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1440" pageHeight="819" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="2" value="ResearchOS 登录注册系统 - 页面原型设计 (1440×820)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=18;fontStyle=1;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="15" width="1400" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" value="登录页 /login" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontStyle=1;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="55" width="340" height="350" as="geometry"/>
+                </mxCell>
+                <mxCell id="4" value="ResearchOS Logo" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="100" y="85" width="180" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="5" value="多源证据驱动的 AI 调研决策系统" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="115" width="260" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="6" value="邮箱地址" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="150" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="7" value="user@company.com" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;fontSize=11;align=left;spacingLeft=8;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="170" width="260" height="32" as="geometry"/>
+                </mxCell>
+                <mxCell id="8" value="密码" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="215" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="9" value="••••••••              👁" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;fontSize=11;align=left;spacingLeft=8;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="235" width="260" height="32" as="geometry"/>
+                </mxCell>
+                <mxCell id="10" value="□ 记住登录状态          忘记密码？" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#0066cc;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="275" width="260" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="11" value="登  录" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#4285f4;strokeColor=#1a73e8;fontColor=#ffffff;fontSize=12;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="305" width="260" height="38" as="geometry"/>
+                </mxCell>
+                <mxCell id="12" value="还没有账号？ 立即注册" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="355" width="260" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="13" value="注册页 /register" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontStyle=1;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="380" y="55" width="340" height="350" as="geometry"/>
+                </mxCell>
+                <mxCell id="14" value="ResearchOS Logo" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="460" y="85" width="180" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="15" value="创建您的 ResearchOS 账号" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="420" y="115" width="260" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="16" value="用户名" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="420" y="145" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="17" value="张三" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;fontSize=11;align=left;spacingLeft=8;" parent="1" vertex="1">
+                    <mxGeometry x="420" y="165" width="260" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="18" value="工作邮箱" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="420" y="200" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="19" value="zhangsan@company.com" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;fontSize=11;align=left;spacingLeft=8;" parent="1" vertex="1">
+                    <mxGeometry x="420" y="220" width="260" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="20" value="密码" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="420" y="255" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="21" value="••••••••              👁" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;fontSize=11;align=left;spacingLeft=8;" parent="1" vertex="1">
+                    <mxGeometry x="420" y="275" width="260" height="28" as="geometry"/>
+                </mxCell>
+                <mxCell id="22" value="✅ 至少 8 位  ✅ 含大小写  ✅ 含数字" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;fontColor=#00aa00;" parent="1" vertex="1">
+                    <mxGeometry x="420" y="305" width="200" height="15" as="geometry"/>
+                </mxCell>
+                <mxCell id="23" value="创建账号" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#34a853;strokeColor=#1e7e34;fontColor=#ffffff;fontSize=12;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="420" y="325" width="260" height="38" as="geometry"/>
+                </mxCell>
+                <mxCell id="24" value="已有账号？ 返回登录" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="420" y="370" width="260" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="25" value="邮箱验证页 /verify-email" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontStyle=1;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="740" y="55" width="340" height="350" as="geometry"/>
+                </mxCell>
+                <mxCell id="26" value="✉️" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=32;" parent="1" vertex="1">
+                    <mxGeometry x="880" y="85" width="60" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="27" value="验证您的邮箱地址" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=13;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="800" y="130" width="220" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="28" value="已向 zhang@company.com 发送验证码" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="780" y="155" width="260" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="29" value="请输入 6 位验证码" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="800" y="185" width="220" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="30" value="5" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=18;fontStyle=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="790" y="215" width="35" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="31" value="2" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=18;fontStyle=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="830" y="215" width="35" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="32" value="8" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=18;fontStyle=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="870" y="215" width="35" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="33" value="9" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=18;fontStyle=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="910" y="215" width="35" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="34" value="1" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=18;fontStyle=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="950" y="215" width="35" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="35" value="4" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#d6b656;fontSize=18;fontStyle=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="990" y="215" width="35" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="36" value="验证码将在 10 分钟后过期" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;fontColor=#999999;" parent="1" vertex="1">
+                    <mxGeometry x="800" y="265" width="220" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="37" value="验证邮箱" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f9ab00;strokeColor=#d6b656;fontColor=#ffffff;fontSize=12;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="800" y="295" width="220" height="38" as="geometry"/>
+                </mxCell>
+                <mxCell id="38" value="没收到？ 重新发送 (58s)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=9;fontColor=#0066cc;" parent="1" vertex="1">
+                    <mxGeometry x="800" y="340" width="220" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="39" value="创建组织页 /setup-org" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;fontStyle=1;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="1100" y="55" width="320" height="350" as="geometry"/>
+                </mxCell>
+                <mxCell id="40" value="ResearchOS Logo" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="1160" y="80" width="200" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="41" value="创建您的组织 — 开始团队协作" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="1120" y="110" width="280" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="42" value="组织名称 *" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="1120" y="140" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="43" value="XX 科技有限公司" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;fontSize=11;align=left;spacingLeft=8;" parent="1" vertex="1">
+                    <mxGeometry x="1120" y="160" width="280" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="44" value="所属行业" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="1120" y="200" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="45" value="互联网/科技           ▼" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;fontSize=11;align=left;spacingLeft=8;" parent="1" vertex="1">
+                    <mxGeometry x="1120" y="220" width="280" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="46" value="团队规模" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="1120" y="260" width="80" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="47" value="11-50 人              ▼" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;fontSize=11;align=left;spacingLeft=8;" parent="1" vertex="1">
+                    <mxGeometry x="1120" y="280" width="280" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="48" value="邀请团队成员（可选）" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="1120" y="320" width="150" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="49" value="member1@company.com&#10;+ 添加更多成员" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;fontSize=10;align=left;spacingLeft=8;" parent="1" vertex="1">
+                    <mxGeometry x="1120" y="340" width="280" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="50" value="跳过" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;fontSize=11;fontColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="1120" y="385" width="130" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="51" value="创建并开始" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ea4335;strokeColor=#c5221f;fontColor=#ffffff;fontSize=11;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="1270" y="385" width="130" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="52" value="邀请注册页 /invite/:token" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;fontStyle=1;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="20" y="425" width="440" height="370" as="geometry"/>
+                </mxCell>
+                <mxCell id="53" value="ResearchOS Logo" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=14;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="140" y="455" width="200" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="54" value="张三 邀请您加入 XX 科技有限公司" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;fontColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="490" width="360" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="55" value="您的邮箱（只读）" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="520" width="120" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="56" value="invited@company.com" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#cccccc;fontSize=11;align=left;spacingLeft=8;fontColor=#999999;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="545" width="360" height="32" as="geometry"/>
+                </mxCell>
+                <mxCell id="57" value="您的姓名 *" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="590" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="58" value="李四" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;fontSize=11;align=left;spacingLeft=8;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="615" width="360" height="32" as="geometry"/>
+                </mxCell>
+                <mxCell id="59" value="设置密码 *" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="660" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="60" value="••••••••              👁" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;fontSize=11;align=left;spacingLeft=8;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="685" width="360" height="32" as="geometry"/>
+                </mxCell>
+                <mxCell id="61" value="确认密码 *" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="730" width="100" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="62" value="••••••••" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;fontSize=11;align=left;spacingLeft=8;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="755" width="360" height="32" as="geometry"/>
+                </mxCell>
+                <mxCell id="63" value="加入组织并开始" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#9c27b0;strokeColor=#7b1fa2;fontColor=#ffffff;fontSize=12;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="795" width="360" height="38" as="geometry"/>
+                </mxCell>
+                <mxCell id="64" value="团队管理页 /settings/team" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#666666;fontStyle=1;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="425" width="480" height="370" as="geometry"/>
+                </mxCell>
+                <mxCell id="65" value="ResearchOS    [议题] [证据] [决策] [仪表盘]        [设置 ▾] [头像]" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;fontSize=11;align=left;spacingLeft=10;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="425" width="480" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="66" value="设置 &gt; 团队管理" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;spacingLeft=15;" parent="1" vertex="1">
+                    <mxGeometry x="480" y="465" width="480" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="67" value="XX 科技有限公司 | 成员: 5/20 (Pro 计划)           [邀请成员]" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e3f2fd;strokeColor=#2196f3;fontSize=11;align=left;spacingLeft=15;" parent="1" vertex="1">
+                    <mxGeometry x="495" y="495" width="450" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="68" value="成员列表                                           🔍 搜索成员..." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;fontSize=11;fontStyle=1;align=left;spacingLeft=15;spacingTop=8;" parent="1" vertex="1">
+                    <mxGeometry x="495" y="545" width="450" height="160" as="geometry"/>
+                </mxCell>
+                <mxCell id="69" value="头像    姓名             邮箱                      角色         操作" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#f5f5f5;strokeColor=#e0e0e0;fontSize=10;align=left;spacingLeft=8;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="575" width="440" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="70" value="🟢  张三(你)     zhang@co.com       Admin         —" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#e8f5e9;strokeColor=#e0e0e0;fontSize=10;align=left;spacingLeft=8;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="600" width="440" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="71" value="🟢  李四           li@co.com           Analyst       ⚙ ▾" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontSize=10;align=left;spacingLeft=8;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="630" width="440" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="72" value="🔴  王五           wang@co.com      Viewer        ⚙ ▾" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#e0e0e0;fontSize=10;align=left;spacingLeft=8;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="660" width="440" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="73" value="⏳  zhao@co     zhao@co.com       (待接受)     ⚙ ▾" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#fff3e0;strokeColor=#e0e0e0;fontSize=10;align=left;spacingLeft=8;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="690" width="440" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="74" value="待处理邀请" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#ffffff;strokeColor=#cccccc;fontSize=11;fontStyle=1;align=left;spacingLeft=15;spacingTop=5;" parent="1" vertex="1">
+                    <mxGeometry x="495" y="715" width="450" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="75" value="zhao@co.com  — 已发送(2天前) — 角色: Analyst" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="505" y="740" width="300" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="76" value="[重新发送]  [取消邀请]" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontColor=#0066cc;spacingLeft=10;" parent="1" vertex="1">
+                    <mxGeometry x="505" y="758" width="200" height="15" as="geometry"/>
+                </mxCell>
+                <mxCell id="77" value="认证流程说明" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff9c4;strokeColor=#f9a825;fontStyle=1;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="980" y="425" width="440" height="370" as="geometry"/>
+                </mxCell>
+                <mxCell id="78" value="流程 A: 注册 → 邮箱验证 → 创建组织 → 进入系统" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;spacingLeft=15;" parent="1" vertex="1">
+                    <mxGeometry x="990" y="455" width="420" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="79" value="流程 B: 邀请邮件 → 点击链接 → 设置密码 → 进入系统" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;spacingLeft=15;" parent="1" vertex="1">
+                    <mxGeometry x="990" y="490" width="420" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="80" value="流程 C: 登录 → 凭证校验 → JWT签发 → 进入系统" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;spacingLeft=15;" parent="1" vertex="1">
+                    <mxGeometry x="990" y="525" width="420" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="81" value="流程 D: 忘记密码 → 邮箱验证 → 重置密码 → 重新登录" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=11;spacingLeft=15;" parent="1" vertex="1">
+                    <mxGeometry x="990" y="560" width="420" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="82" value="核心安全特性" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=12;fontStyle=1;spacingLeft=15;fontColor=#333333;" parent="1" vertex="1">
+                    <mxGeometry x="990" y="600" width="420" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="83" value="✓ JWT + Refresh Token 双令牌机制" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;spacingLeft=20;fontColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="990" y="625" width="420" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="84" value="✓ 登录限流 + 账号锁定（暴力破解防护）" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;spacingLeft=20;fontColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="990" y="645" width="420" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="85" value="✓ bcrypt 密码加密存储" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;spacingLeft=20;fontColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="990" y="665" width="420" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="86" value="✓ CSRF 防护 + HttpOnly Cookie" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;spacingLeft=20;fontColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="990" y="685" width="420" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="87" value="✓ 完整审计日志（登录、角色变更等）" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;spacingLeft=20;fontColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="990" y="705" width="420" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="88" value="✓ 多租户隔离（tenantId 绑定）" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;spacingLeft=20;fontColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="990" y="725" width="420" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="89" value="✓ 邀请链接一次性使用 + 7天过期" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;spacingLeft=20;fontColor=#666666;" parent="1" vertex="1">
+                    <mxGeometry x="990" y="745" width="420" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="90" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#4285f4;strokeWidth=2;dashed=1;" parent="1" source="12" target="13" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="190" y="400"/>
+                            <mxPoint x="550" y="400"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="91" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#34a853;strokeWidth=2;dashed=1;" parent="1" source="24" target="25" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="550" y="400"/>
+                            <mxPoint x="910" y="400"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="92" style="edgeStyle=orthogonalEdgeStyle;endArrow=classic;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#f9ab00;strokeWidth=2;dashed=1;" parent="1" source="37" target="39" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="910" y="400"/>
+                            <mxPoint x="1260" y="400"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="93" value="新用户注册流程" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=10;fontStyle=1;fontColor=#4285f4;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="385" width="140" height="15" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
