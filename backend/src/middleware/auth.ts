@@ -5,7 +5,7 @@ import jwt from 'jsonwebtoken'
 import type { JWTPayload, AuthContext } from '@research-os/shared'
 import { ROLE_PERMISSIONS } from '@research-os/shared'
 
-const JWT_SECRET = process.env.JWT_ACCESS_SECRET || 'dev-secret-change-me'
+const JWT_SECRET = process.env.JWT_ACCESS_SECRET || 'dev-access-secret'
 
 /** 从请求头解析 JWT，返回 AuthContext */
 export function extractAuth(req: NextRequest): AuthContext | null {

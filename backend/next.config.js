@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  // 编译 workspace 内的 TypeScript 包
+  transpilePackages: ['@research-os/shared', '@research-os/database'],
+
   // 仅作为 API 服务，不需要 React 页面
   // 前端由 Vue 3 独立部署
   async headers() {
