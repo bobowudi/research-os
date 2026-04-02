@@ -4,6 +4,14 @@ import { resolve } from 'path'
 
 export default defineConfig({
   plugins: [vue()],
+  css: {
+    preprocessorOptions: {
+      less: {
+        additionalData: `@import "@/shared/styles/variables.less";`,
+        javascriptEnabled: true,
+      },
+    },
+  },
   resolve: {
     alias: {
       '@': resolve(__dirname, './src'),

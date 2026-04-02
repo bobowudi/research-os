@@ -4,18 +4,48 @@
     "rootDir": ".",
     "outDir": "./dist",
     "jsx": "preserve",
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
     "module": "ESNext",
     "moduleResolution": "bundler",
-    "plugins": [{ "name": "next" }],
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
     "paths": {
-      "@/*": ["./src/*"],
-      "@research-os/shared": ["../shared/src"],
-      "@research-os/shared/*": ["../shared/src/*"],
-      "@research-os/database": ["../database"],
-      "@research-os/database/*": ["../database/*"]
-    }
+      "@/*": [
+        "./src/*"
+      ],
+      "@research-os/shared": [
+        "../shared/src"
+      ],
+      "@research-os/shared/*": [
+        "../shared/src/*"
+      ],
+      "@research-os/database": [
+        "../database"
+      ],
+      "@research-os/database/*": [
+        "../database/*"
+      ]
+    },
+    "allowJs": true,
+    "noEmit": true,
+    "incremental": true
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
-  "exclude": ["node_modules", "dist", ".next"]
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    ".next"
+  ]
 }

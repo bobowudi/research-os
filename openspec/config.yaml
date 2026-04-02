@@ -1,0 +1,20 @@
+schema: spec-driven
+
+# Project context
+context: |
+  Tech stack: TypeScript, Vue 3 (frontend), Next.js 14 API (backend), TiDB/Kysely (database)
+  Monorepo: pnpm workspaces — shared, database, backend, frontend
+  We use conventional commits
+  Domain: multi-source evidence-driven AI research decision system (ResearchOS)
+
+# Per-artifact rules
+rules:
+  proposal:
+    - Keep proposals focused on what and why
+    - Include impact analysis (new/modified files)
+  design:
+    - Include specific code signatures and data structures
+    - Document all technical decisions with reasoning
+  tasks:
+    - Break tasks into chunks of max 2 hours
+    - Include dependencies between tasks
