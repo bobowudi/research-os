@@ -14,6 +14,7 @@ const ForgotPasswordPage = () => import('@/features/auth/pages/ForgotPasswordPag
 const ResetPasswordPage = () => import('@/features/auth/pages/ResetPasswordPage.vue')
 
 // ====== 业务页面 ======
+const HomePage = () => import('@/features/home/pages/HomePage.vue')
 const DashboardPage = () => import('@/features/dashboard/pages/DashboardPage.vue')
 const IssueListPage = () => import('@/features/issues/pages/IssueListPage.vue')
 const IssueDetailPage = () => import('@/features/issues/pages/IssueDetailPage.vue')
@@ -68,6 +69,12 @@ const routes: RouteRecordRaw[] = [
     children: [
       {
         path: '',
+        name: 'home',
+        component: HomePage,
+        meta: { requiresAuth: false },
+      },
+      {
+        path: 'dashboard',
         name: 'dashboard',
         component: DashboardPage,
       },
@@ -155,7 +162,7 @@ router.beforeEach(async (to, _from, next) => {
   if (requiresAuth && !authStore.isLoggedIn) {
     next({ name: 'login', query: { redirect: to.fullPath } })
   } else if (!requiresAuth && authStore.isLoggedIn && (to.name === 'login' || to.name === 'register')) {
-    next({ name: 'dashboard' })
+    next({ name: 'home' })
   } else {
     next()
   }

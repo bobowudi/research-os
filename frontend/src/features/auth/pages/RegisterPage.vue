@@ -1,9 +1,12 @@
 <template>
-  <div class="auth-page">
-    <div class="auth-card">
-      <h1 class="auth-title">注册 ResearchOS</h1>
-      <p class="auth-subtitle">创建你的组织并开始使用</p>
-
+  <AuthShell>
+    <AuthCardFrame
+      title="注册 ResearchOS"
+      subtitle="创建你的组织并开始使用"
+      footer-text="已有账号? "
+      footer-link-to="/login"
+      footer-link-label="登录"
+    >
       <form class="auth-form" @submit.prevent="handleRegister">
         <div class="form-row">
           <div class="form-group">
@@ -56,17 +59,32 @@
 
         <p v-if="error" class="error-message">{{ error }}</p>
       </form>
+    </AuthCardFrame>
 
-      <p class="auth-footer">
-        已有账号? <router-link to="/login">登录</router-link>
-      </p>
-    </div>
-  </div>
+    <template #panel>
+      <AuthFeaturePanel>
+        <template #title>
+          为你的团队搭建<br />研究操作系统
+        </template>
+        <template #description>
+          创建组织后即可统一管理议题、证据、洞察与决策，让研究流程从分散记录变成可追踪的系统工程。
+        </template>
+
+        <AuthFeatureItem icon="🏢" label="组织级工作空间" tone="cyan" />
+        <AuthFeatureItem icon="🔎" label="议题与证据统一管理" tone="violet" />
+        <AuthFeatureItem icon="⚡" label="AI 决策链路快速启动" tone="amber" />
+      </AuthFeaturePanel>
+    </template>
+  </AuthShell>
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
+import { reactive, ref } from 'vue'
 import { useRouter } from 'vue-router'
+import AuthCardFrame from '../components/AuthCardFrame.vue'
+import AuthFeatureItem from '../components/AuthFeatureItem.vue'
+import AuthFeaturePanel from '../components/AuthFeaturePanel.vue'
+import AuthShell from '../components/AuthShell.vue'
 import { useAuthStore } from '@/shared/stores/auth'
 
 const router = useRouter()
@@ -87,6 +105,7 @@ const form = reactive({
 async function handleRegister() {
   loading.value = true
   error.value = ''
+
   try {
     await authStore.register(form)
     router.push('/')
@@ -98,45 +117,73 @@ async function handleRegister() {
 }
 </script>
 
-<style scoped>
-.auth-page {
-  min-height: 100vh;
+<style scoped lang="less">
+.auth-form {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  flex-direction: column;
+  gap: 16px;
 }
 
-.auth-card {
-  width: 540px;
-  background: #fff;
-  border-radius: var(--radius-lg);
-  padding: 40px;
-  box-shadow: var(--shadow-lg);
+.form-row {
+  display: flex;
+  gap: 12px;
 }
 
-.auth-title { font-size: 24px; font-weight: 700; text-align: center; margin-bottom: 4px; }
-.auth-subtitle { text-align: center; color: var(--color-text-secondary); margin-bottom: 32px; }
+.form-group {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
 
-.auth-form { display: flex; flex-direction: column; gap: 16px; }
-.form-row { display: flex; gap: 12px; }
-.form-row .form-group { flex: 1; }
-.form-group { display: flex; flex-direction: column; gap: 6px; }
-.form-group label { font-weight: 500; font-size: 13px; color: var(--color-text-secondary); }
-.form-group input, .form-group select {
-  padding: 10px 12px; border: 1px solid var(--color-border);
-  border-radius: var(--radius-md); font-size: 14px;
-}
-.form-group input:focus, .form-group select:focus {
-  outline: none; border-color: var(--color-primary);
+  label {
+    font-weight: 500;
+    font-size: 13px;
+    color: var(--color-text-secondary);
+  }
+
+  input,
+  select {
+    padding: 10px 12px;
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-md);
+    font-size: 14px;
+  }
+
+  input:focus,
+  select:focus {
+    outline: none;
+    border-color: var(--color-primary);
+  }
 }
 
 .btn-primary {
-  padding: 12px; background: var(--color-primary); color: #fff;
-  border-radius: var(--radius-md); font-size: 15px; font-weight: 600; margin-top: 8px;
+  padding: 12px;
+  margin-top: 8px;
+  background: var(--color-primary);
+  color: #fff;
+  border-radius: var(--radius-md);
+  font-size: 15px;
+  font-weight: 600;
 }
-.btn-primary:hover:not(:disabled) { background: var(--color-primary-hover); }
-.btn-primary:disabled { opacity: 0.6; cursor: not-allowed; }
-.error-message { color: var(--color-danger); font-size: 13px; text-align: center; }
-.auth-footer { text-align: center; margin-top: 24px; font-size: 14px; color: var(--color-text-secondary); }
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--color-primary-hover);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: var(--color-danger);
+  font-size: 13px;
+  text-align: center;
+}
+
+@media (max-width: 640px) {
+  .form-row {
+    flex-direction: column;
+  }
+}
 </style>

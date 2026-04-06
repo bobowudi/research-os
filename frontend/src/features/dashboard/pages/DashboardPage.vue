@@ -1,6 +1,5 @@
 <template>
   <div class="dashboard">
-    <!-- Welcome Banner -->
     <div class="welcome-banner">
       <div class="welcome-text">
         <h1 class="welcome-title">欢迎回来 👋</h1>
@@ -13,7 +12,6 @@
       </div>
     </div>
 
-    <!-- Stats Grid -->
     <div class="stats-grid">
       <div class="stat-card" v-for="(stat, i) in stats" :key="stat.label" :class="`stat-${i}`">
         <div class="stat-icon">{{ stat.icon }}</div>
@@ -24,7 +22,6 @@
       </div>
     </div>
 
-    <!-- Content Grid -->
     <div class="dashboard-grid">
       <div class="dash-card">
         <div class="card-header">
@@ -109,7 +106,6 @@ onMounted(async () => {
   margin: 0 auto;
 }
 
-// ===== Welcome Banner =====
 .welcome-banner {
   padding: 36px 40px;
   background: @gradient-hero;
@@ -149,7 +145,6 @@ onMounted(async () => {
   }
 }
 
-// ===== Stats Grid =====
 .stats-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -204,7 +199,6 @@ onMounted(async () => {
   }
 }
 
-// ===== Dashboard Cards =====
 .dashboard-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));

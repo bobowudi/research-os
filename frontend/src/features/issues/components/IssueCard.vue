@@ -9,7 +9,7 @@
           <span class="meta-dot">·</span>
           <el-tag v-if="issue.domain" size="small" effect="plain" round class="domain-tag">{{ issue.domain }}</el-tag>
           <span class="meta-dot">·</span>
-          <span class="issue-time">{{ formatTime(issue.createdAt) }}</span>
+          <span class="issue-time">{{ formatIssueRelativeTime(issue.createdAt) }}</span>
         </div>
       </div>
     </div>
@@ -26,7 +26,7 @@
       </div>
       <div class="priority-badge" :class="issue.priority">
         <el-icon><Flag /></el-icon>
-        <span>{{ formatPriority(issue.priority) }}</span>
+        <span>{{ formatIssuePriority(issue.priority) }}</span>
       </div>
     </div>
   </div>
@@ -34,31 +34,14 @@
 
 <script setup lang="ts">
 import { Document, Flag, Opportunity } from '@element-plus/icons-vue'
+import type { IssueDetail } from '../types'
+import { formatIssuePriority, formatIssueRelativeTime } from '../utils'
 
 defineProps<{
-  issue: any
+  issue: IssueDetail
 }>()
 
 defineEmits(['click'])
-
-function formatTime(dateStr: string) {
-  if (!dateStr) return ''
-  const date = new Date(dateStr)
-  const now = new Date()
-  const diff = now.getTime() - date.getTime()
-  const minutes = Math.floor(diff / 60000)
-  if (minutes < 60) return `${minutes} 分钟前`
-  const hours = Math.floor(minutes / 60)
-  if (hours < 24) return `${hours} 小时前`
-  const days = Math.floor(hours / 24)
-  if (days < 30) return `${days} 天前`
-  return date.toLocaleDateString()
-}
-
-function formatPriority(priority: string) {
-  const map: any = { urgent: '紧急', high: '高', medium: '中', low: '低', none: '无' }
-  return map[priority] || '无'
-}
 </script>
 
 <style scoped lang="less">

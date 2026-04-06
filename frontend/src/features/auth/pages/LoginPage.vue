@@ -1,397 +1,652 @@
 <template>
-  <div class="auth-page">
-    <!-- Decorative background -->
-    <div class="bg-pattern"></div>
-    <div class="bg-blob blob-1"></div>
-    <div class="bg-blob blob-2"></div>
-    <div class="bg-blob blob-3"></div>
-
-    <div class="auth-card">
-      <div class="auth-header">
-        <div class="logo-box">
-          <span class="logo-letter">R</span>
+  <div class="login-page">
+    <!-- 左侧：登录控制区 (40%) -->
+    <section class="login-left">
+      <!-- 品牌 Logo -->
+      <div class="brand">
+        <div class="brand-icon">
+          <svg class="brand-svg" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M13 10V3L4 14H11V21L20 10H13Z" />
+          </svg>
         </div>
-        <h1 class="auth-title">ResearchOS</h1>
-        <p class="auth-subtitle">AI 驱动的研究决策系统</p>
+        <div class="brand-text">
+          <span class="brand-name">ResearchOS</span>
+          <span class="brand-label">Enterprise Portal</span>
+        </div>
       </div>
 
-      <el-form
-        :model="form"
-        :rules="rules"
-        ref="loginForm"
-        label-position="top"
-        class="auth-form"
-        @submit.prevent="handleLogin"
-      >
-        <el-form-item label="邮箱" prop="email">
-          <el-input
-            v-model="form.email"
-            placeholder="name@company.com"
-            :prefix-icon="Message"
-            size="large"
-          />
-        </el-form-item>
-
-        <el-form-item label="密码" prop="password">
-          <el-input
-            v-model="form.password"
-            type="password"
-            placeholder="输入密码"
-            :prefix-icon="Lock"
-            show-password
-            size="large"
-          />
-        </el-form-item>
-
-        <div class="form-options">
-          <el-checkbox v-model="form.remember">记住我</el-checkbox>
-          <router-link to="/forgot-password" class="forgot-link">忘记密码?</router-link>
+      <!-- 登录表单主体 -->
+      <div class="login-form-wrapper">
+        <div class="login-header">
+          <h2 class="login-title">AUTHORIZE</h2>
+          <p class="login-desc">
+            请输入您的凭证以访问
+            <span class="highlight">ResearchOS</span>
+            智能决策系统。
+          </p>
         </div>
 
-        <el-button
-          type="primary"
-          native-type="submit"
-          class="submit-btn"
-          :loading="loading"
-          size="large"
-        >
-          {{ loading ? '登录中...' : '登录' }}
-        </el-button>
+        <form class="login-form" @submit.prevent="handleLogin">
+          <div class="form-fields">
+            <div class="field-group">
+              <label class="field-label">工作邮箱</label>
+              <input
+                v-model="form.email"
+                type="email"
+                required
+                placeholder="analyst@researchos.ai"
+                class="field-input"
+              />
+            </div>
 
-        <el-alert
-          v-if="error"
-          :title="error"
-          type="error"
-          :closable="false"
-          show-icon
-          class="error-alert"
+            <div class="field-group">
+              <div class="field-label-row">
+                <label class="field-label">访问密码</label>
+                <router-link to="/forgot-password" class="field-link">重置</router-link>
+              </div>
+              <input
+                v-model="form.password"
+                type="password"
+                required
+                placeholder="••••••••••••"
+                class="field-input"
+              />
+            </div>
+          </div>
+
+          <div class="remember-row">
+            <label class="remember-label">
+              <input v-model="form.remember" type="checkbox" class="remember-checkbox" />
+              <span>信任此终端设备</span>
+            </label>
+          </div>
+
+          <button
+            type="submit"
+            class="submit-btn"
+            :disabled="loading"
+          >
+            <span v-if="!loading">同步身份进入</span>
+            <div v-else class="spinner" />
+            <svg
+              v-if="!loading"
+              class="arrow-icon"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M14 5l7 7m0 0l-7 7m7-7H3"
+              />
+            </svg>
+          </button>
+
+          <div v-if="error" class="error-alert">
+            <svg class="error-icon" viewBox="0 0 20 20" fill="currentColor">
+              <path
+                fill-rule="evenodd"
+                d="M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z"
+                clip-rule="evenodd"
+              />
+            </svg>
+            <span>{{ error }}</span>
+          </div>
+        </form>
+
+        <div class="register-link">
+          还没有账号？
+          <router-link to="/register" class="register-link-action">注册组织</router-link>
+        </div>
+      </div>
+
+      <!-- 底部状态 -->
+      <footer class="login-footer">
+        <div class="footer-status">
+          <span class="footer-label">集群状态</span>
+          <div class="footer-indicator">
+            <div class="status-dot" />
+            <span class="status-text">ONLINE (12ms)</span>
+          </div>
+        </div>
+        <div class="footer-copyright">&copy; 2026 RESEARCHOS</div>
+      </footer>
+    </section>
+
+    <!-- 右侧：插画呈现区 (60%) -->
+    <section class="login-right">
+      <div class="illustration-container">
+        <img
+          :src="loginImage"
+          alt="ResearchOS 架构插画"
+          class="illustration-img"
         />
-      </el-form>
-
-      <div class="auth-footer">
-        还没有账号? <router-link to="/register" class="register-link">注册组织</router-link>
       </div>
-    </div>
 
-    <div class="auth-side-info">
-      <div class="info-content">
-        <h2 class="info-title">让 AI 驱动你的<br/>研究决策流程</h2>
-        <p class="info-desc">从信号采集到洞察生成，从证据管理到决策建议，ResearchOS 为你的团队提供全链路智能支持。</p>
-        <div class="info-features">
-          <div class="feature-item">
-            <div class="feature-icon feature-icon-1">📊</div>
-            <span>智能信号监测</span>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon feature-icon-2">🧠</div>
-            <span>AI 深度洞察</span>
-          </div>
-          <div class="feature-item">
-            <div class="feature-icon feature-icon-3">🎯</div>
-            <span>数据驱动决策</span>
-          </div>
-        </div>
-      </div>
-    </div>
+      <!-- 环境点缀 -->
+      <div class="bg-dots" />
+      <div class="bg-glow bg-glow--top" />
+      <div class="bg-glow bg-glow--bottom" />
+    </section>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, reactive } from 'vue'
-import { useRouter, useRoute } from 'vue-router'
+import { reactive, ref } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 import { useAuthStore } from '@/shared/stores/auth'
-import { Message, Lock } from '@element-plus/icons-vue'
-import type { FormInstance, FormRules } from 'element-plus'
+import loginImage from '@/assects/login.png'
 
 const router = useRouter()
 const route = useRoute()
 const authStore = useAuthStore()
 
-const loginForm = ref<FormInstance>()
 const loading = ref(false)
 const error = ref('')
 
 const form = reactive({
   email: '',
   password: '',
-  remember: false
-})
-
-const rules = reactive<FormRules>({
-  email: [
-    { required: true, message: '请输入邮箱', trigger: 'blur' },
-    { type: 'email', message: '请输入有效的邮箱地址', trigger: ['blur', 'change'] }
-  ],
-  password: [
-    { required: true, message: '请输入密码', trigger: 'blur' },
-    { min: 6, message: '密码长度至少为 6 位', trigger: 'blur' }
-  ]
+  remember: false,
 })
 
 async function handleLogin() {
-  if (!loginForm.value) return
+  if (!form.email || !form.password) return
 
-  await loginForm.value.validate(async (valid) => {
-    if (valid) {
-      loading.value = true
-      error.value = ''
-      try {
-        await authStore.login(form.email, form.password)
-        const redirect = (route.query.redirect as string) || '/'
-        router.push(redirect)
-      } catch (err: any) {
-        error.value = err.response?.data?.error?.message || '登录失败，请重试'
-      } finally {
-        loading.value = false
-      }
-    }
-  })
+  loading.value = true
+  error.value = ''
+
+  try {
+    await authStore.login(form.email, form.password)
+    const redirect = (route.query.redirect as string) || '/'
+    router.push(redirect)
+  } catch (err: any) {
+    error.value = err.response?.data?.error?.message || '登录失败，请检查邮箱和密码后重试'
+  } finally {
+    loading.value = false
+  }
 }
 </script>
 
 <style scoped lang="less">
-.auth-page {
-  min-height: 100vh;
+// ==================== Variables ====================
+@blue-600: #2563eb;
+@blue-700: #1d4ed8;
+@slate-50: #f8fafc;
+@slate-100: #f1f5f9;
+@slate-200: #e2e8f0;
+@slate-300: #cbd5e1;
+@slate-400: #94a3b8;
+@slate-500: #64748b;
+@slate-600: #475569;
+@slate-900: #0f172a;
+@red-500: #ef4444;
+@red-50: #fef2f2;
+@green-500: #22c55e;
+
+// ==================== Layout ====================
+.login-page {
   display: flex;
-  font-family: @font-family-base;
-  position: relative;
+  height: 100vh;
+  width: 100vw;
   overflow: hidden;
-  background: linear-gradient(135deg, #1e1b4b 0%, #312e81 40%, #4338ca 100%);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
-// ===== Background Decorations =====
-.bg-pattern {
-  position: absolute;
-  inset: 0;
-  background-image:
-    radial-gradient(circle at 1px 1px, rgba(255, 255, 255, 0.06) 1px, transparent 0);
-  background-size: 32px 32px;
-  z-index: 1;
-}
-
-.bg-blob {
-  position: absolute;
-  border-radius: 50%;
-  z-index: 2;
-}
-
-.blob-1 {
-  width: 500px;
-  height: 500px;
-  background: radial-gradient(circle, rgba(6, 182, 212, 0.25) 0%, transparent 70%);
-  top: -150px;
-  right: 20%;
-  filter: blur(60px);
-}
-
-.blob-2 {
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
-  bottom: -100px;
-  left: 10%;
-  filter: blur(80px);
-}
-
-.blob-3 {
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, rgba(245, 158, 11, 0.15) 0%, transparent 70%);
-  top: 50%;
-  right: 5%;
-  filter: blur(60px);
-}
-
-// ===== Login Card =====
-.auth-card {
-  position: relative;
-  z-index: 10;
-  width: 480px;
-  min-height: 100vh;
+// ==================== Left Section ====================
+.login-left {
+  width: 40%;
+  height: 100%;
   background: #fff;
-  padding: 60px 48px;
+  display: flex;
+  flex-direction: column;
+  padding: 48px 80px;
+  position: relative;
+  z-index: 20;
+  box-shadow: 20px 0 60px rgba(0, 0, 0, 0.02);
+  border-right: 1px solid @slate-100;
+}
+
+// Brand
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 0;
+  animation: fadeInDown 0.6s ease-out;
+}
+
+.brand-icon {
+  width: 40px;
+  height: 40px;
+  background: @blue-600;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.25);
+}
+
+.brand-svg {
+  color: #fff;
+  width: 24px;
+  height: 24px;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-name {
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  color: @slate-900;
+  line-height: 1;
+}
+
+.brand-label {
+  font-size: 10px;
+  font-weight: 800;
+  color: @blue-600;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-top: 4px;
+}
+
+// Form wrapper
+.login-form-wrapper {
+  flex: 1;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  box-shadow: 20px 0 60px rgba(0, 0, 0, 0.15);
+  max-width: 380px;
+  margin: 0 auto;
+  width: 100%;
+  animation: fadeIn 0.8s ease-out;
 }
 
-.auth-header {
-  margin-bottom: 40px;
-
-  .logo-box {
-    width: 52px;
-    height: 52px;
-    background: @gradient-primary;
-    border-radius: 14px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 24px;
-    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.3);
-
-    .logo-letter {
-      color: #fff;
-      font-size: 24px;
-      font-weight: 900;
-    }
-  }
-
-  .auth-title {
-    font-size: 28px;
-    font-weight: 800;
-    color: @text-primary;
-    letter-spacing: -0.5px;
-    margin-bottom: 8px;
-  }
-
-  .auth-subtitle {
-    font-size: 15px;
-    color: @text-tertiary;
-    font-weight: 500;
-  }
+.login-header {
+  margin-bottom: 48px;
 }
 
-.auth-form {
-  :deep(.el-form-item__label) {
-    color: @text-secondary;
-    font-size: 13px;
-    font-weight: 600;
-  }
-
-  :deep(.el-input__wrapper) {
-    border-radius: @radius-md;
-    box-shadow: none !important;
-    border: 1.5px solid @border-color;
-    padding: 6px 14px;
-    transition: @transition-base;
-
-    &.is-focus {
-      border-color: @primary-color;
-      box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.1) !important;
-    }
-  }
+.login-title {
+  font-size: 40px;
+  font-weight: 900;
+  color: @slate-900;
+  letter-spacing: -1px;
+  margin: 0 0 12px 0;
+  font-style: italic;
 }
 
-.form-options {
+.login-desc {
+  color: @slate-400;
+  font-weight: 500;
+  line-height: 1.6;
+  font-size: 14px;
+  margin: 0;
+}
+
+.highlight {
+  color: @blue-600;
+  font-weight: 700;
+}
+
+// Form
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.form-fields {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.field-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field-label-row {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 28px;
-
-  .forgot-link {
-    font-size: 13px;
-    color: @primary-color;
-    text-decoration: none;
-    font-weight: 600;
-
-    &:hover { text-decoration: underline; }
-  }
 }
 
-.submit-btn {
-  width: 100%;
-  height: 48px;
-  background: @gradient-primary;
-  border: none;
+.field-label {
+  font-size: 10px;
   font-weight: 700;
-  font-size: 15px;
-  border-radius: @radius-md;
-  color: #fff;
-  transition: @transition-base;
-  box-shadow: 0 4px 14px rgba(99, 102, 241, 0.3);
+  color: @slate-500;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  margin-left: 4px;
+}
+
+.field-link {
+  font-size: 10px;
+  font-weight: 700;
+  color: @blue-600;
+  text-decoration: none;
 
   &:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 8px 20px rgba(99, 102, 241, 0.35);
+    text-decoration: underline;
   }
 }
 
-.error-alert {
-  margin-top: 16px;
-}
-
-.auth-footer {
-  margin-top: 32px;
+.field-input {
+  width: 100%;
+  padding: 16px 24px;
+  background: @slate-50;
+  border: 1.5px solid @slate-200;
+  border-radius: 16px;
   font-size: 14px;
-  color: @text-tertiary;
+  font-weight: 600;
+  color: @slate-900;
+  outline: none;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
 
-  .register-link {
-    color: @primary-color;
-    font-weight: 700;
-    text-decoration: none;
-    &:hover { text-decoration: underline; }
+  &::placeholder {
+    color: @slate-300;
+    font-weight: 500;
+  }
+
+  &:focus {
+    border-color: @blue-600;
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.1);
   }
 }
 
-// ===== Right Side Info Panel =====
-.auth-side-info {
-  flex: 1;
+// Remember
+.remember-row {
+  display: flex;
+  align-items: center;
+  margin-left: 4px;
+}
+
+.remember-label {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+
+  span {
+    font-size: 11px;
+    font-weight: 700;
+    color: @slate-400;
+    text-transform: uppercase;
+  }
+}
+
+.remember-checkbox {
+  width: 16px;
+  height: 16px;
+  border-radius: 4px;
+  border: 1.5px solid @slate-300;
+  accent-color: @blue-600;
+  cursor: pointer;
+}
+
+// Submit button
+.submit-btn {
+  width: 100%;
+  padding: 20px;
+  background: linear-gradient(135deg, @blue-600 0%, @blue-700 100%);
+  box-shadow: 0 10px 30px -5px rgba(37, 99, 235, 0.4);
+  color: #fff;
+  border: none;
+  border-radius: 16px;
+  font-weight: 900;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+  cursor: pointer;
+  transition: all 0.2s ease;
   display: flex;
   align-items: center;
   justify-content: center;
-  position: relative;
-  z-index: 5;
-  padding: 60px;
-}
+  gap: 12px;
 
-.info-content {
-  max-width: 480px;
-
-  .info-title {
-    font-size: 40px;
-    font-weight: 900;
-    color: #fff;
-    line-height: 1.2;
-    letter-spacing: -1px;
-    margin-bottom: 20px;
+  &:hover:not(:disabled) {
+    transform: scale(1.02);
+    box-shadow: 0 14px 36px -5px rgba(37, 99, 235, 0.5);
   }
 
-  .info-desc {
-    font-size: 16px;
-    color: rgba(255, 255, 255, 0.65);
-    line-height: 1.7;
-    margin-bottom: 40px;
+  &:active:not(:disabled) {
+    transform: scale(0.98);
+  }
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
   }
 }
 
-.info-features {
+.arrow-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #fff;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+// Error alert
+.error-alert {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: @red-50;
+  border: 1px solid rgba(239, 68, 68, 0.2);
+  border-radius: 12px;
+  font-size: 13px;
+  color: @red-500;
+  font-weight: 600;
+}
+
+.error-icon {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+// Register link
+.register-link {
+  margin-top: 24px;
+  font-size: 14px;
+  color: @slate-400;
+}
+
+.register-link-action {
+  color: @blue-600;
+  font-weight: 700;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+// ==================== Footer ====================
+.login-footer {
+  margin-top: auto;
+  padding-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid @slate-100;
+}
+
+.footer-status {
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: 4px;
+}
 
-  .feature-item {
+.footer-label {
+  font-size: 9px;
+  font-weight: 900;
+  color: @slate-300;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+}
+
+.footer-indicator {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: @green-500;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.5);
+}
+
+.status-text {
+  font-size: 10px;
+  font-weight: 700;
+  color: @slate-600;
+  letter-spacing: -0.3px;
+}
+
+.footer-copyright {
+  font-size: 10px;
+  font-weight: 700;
+  color: @slate-300;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+
+// ==================== Right Section ====================
+.login-right {
+  display: none;
+  width: 60%;
+  height: 100%;
+  background: #f8fbff;
+  position: relative;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 64px;
+
+  @media (min-width: 1024px) {
     display: flex;
-    align-items: center;
-    gap: 16px;
-    padding: 14px 20px;
-    background: rgba(255, 255, 255, 0.08);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: @radius-lg;
-    color: #fff;
-    font-size: 15px;
-    font-weight: 600;
-    backdrop-filter: blur(8px);
-    transition: @transition-base;
+  }
+}
 
-    &:hover {
-      background: rgba(255, 255, 255, 0.12);
-      transform: translateX(4px);
-    }
+.illustration-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: zoomIn 0.6s ease-out, floating 6s ease-in-out infinite;
+}
+
+.illustration-img {
+  max-width: 95%;
+  max-height: 90%;
+  object-fit: contain;
+  filter: drop-shadow(0 50px 80px rgba(37, 99, 235, 0.15));
+}
+
+// Background decorations
+.bg-dots {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(#3b82f6 1.2px, transparent 1.2px);
+  background-size: 40px 40px;
+  opacity: 0.04;
+}
+
+.bg-glow {
+  position: absolute;
+  border-radius: 50%;
+
+  &--top {
+    top: -10%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: rgba(191, 219, 254, 0.4);
+    filter: blur(120px);
   }
 
-  .feature-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 20px;
+  &--bottom {
+    bottom: -10%;
+    left: -10%;
+    width: 400px;
+    height: 400px;
+    background: rgba(224, 231, 255, 0.5);
+    filter: blur(100px);
   }
+}
 
-  .feature-icon-1 { background: rgba(6, 182, 212, 0.2); }
-  .feature-icon-2 { background: rgba(139, 92, 246, 0.2); }
-  .feature-icon-3 { background: rgba(245, 158, 11, 0.2); }
+// ==================== Responsive ====================
+@media (max-width: 1023px) {
+  .login-left {
+    width: 100%;
+    padding: 32px 24px;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1440px) {
+  .login-left {
+    padding: 40px 56px;
+  }
+}
+
+// ==================== Animations ====================
+@keyframes fadeInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes floating {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-20px); }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
 }
 </style>
