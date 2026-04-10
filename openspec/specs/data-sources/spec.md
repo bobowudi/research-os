@@ -215,6 +215,34 @@ export interface ImportJob {
 
 ---
 
+## Runtime Backbone 集成
+
+### 统一运行骨架
+
+1. 每次 import sync MUST 创建一个 `import` 类型的 runtime run，并在不替代 `import_jobs` 业务语义的前提下提供统一运行视图
+2. runtime run MUST 带 `tenant_id`，并支持关联 `issue_id` 或 `data_source_id` 等业务锚点（如适用）
+3. import 运行 SHOULD 记录 `input_snapshot`、`output_snapshot`、`error_message`、`latency_ms`
+
+### 任务拆分
+
+1. import 执行 SHOULD 映射为可追踪的 runtime tasks
+2. 首批 task 划分 SHOULD 至少覆盖：`fetch_source`、`normalize_content`、`deduplicate_content`、`persist_evidence`、`emit_evidence_created`、`trigger_postprocess`
+3. runtime task MUST 支持记录已完成/未完成步骤，以支持失败后 resume
+
+### Artifact
+
+1. 抓取到的原始内容 SHOULD 登记为 `raw_source` artifact
+2. 大体积原始结果 MAY 外置存储，但 runtime 层 MUST 保留 `storage_type` 与 `storage_key` 引用
+3. import artifacts MUST 支持按 run / issue / entity 查询
+
+### 恢复与查询
+
+1. import retry / resume SHOULD 复用统一 runtime recovery 语义
+2. resume MUST 支持跳过已完成 task，而不是默认从头重新抓取全部步骤
+3. runtime 查询 MUST 保持 tenant scope 隔离
+
+---
+
 ## API 接口 (规划)
 
 ### 数据源 CRUD

@@ -125,6 +125,36 @@ export interface Review {
 
 ---
 
+## Runtime Backbone 集成
+
+### 统一运行骨架
+
+1. AI 回顾总结执行 MUST 创建一个 `review_summary` 类型的 runtime run
+2. runtime run MUST 带 `tenant_id` 与 `issue_id`，并可关联具体 `review_id` 或相关业务锚点
+3. review summary run SHOULD 记录 `input_snapshot`、`output_snapshot`、`error_message`、`latency_ms`
+
+### 任务拆分
+
+1. review summary 执行 SHOULD 映射为 runtime tasks
+2. 首批 task 划分 SHOULD 至少覆盖：`load_review_context`、`generate_review_summary`、`create_historical_evidence`、`link_generated_evidence`、`trigger_embedding`
+3. runtime task MUST 支持记录已完成/未完成步骤，以支持失败后 resume
+
+### Artifact 与闭环回流
+
+1. AI 生成的回顾总结 SHOULD 登记为 `review_summary` artifact
+2. 由回看沉淀生成的历史证据 SHOULD 登记为 `historical_evidence` artifact
+3. 即使 `reviews.generated_evidence_id` 继续作为业务闭环锚点，runtime 层仍 MUST 保留 artifact 引用以支撑追溯、恢复与下一轮 reasoning 复用
+4. 已完成 task 产生的 artifacts MUST 在失败或恢复时保留
+
+### 恢复与治理
+
+1. review summary retry / resume SHOULD 复用统一 runtime recovery 语义
+2. resume MUST 支持跳过已完成 task，而不是默认重新生成全部历史产物
+3. runtime 查询与 artifact 查询 MUST 遵守 tenant scope 隔离
+4. 用户触发 review summary、系统生成 historical evidence 等关键动作 SHOULD 进入审计记录
+
+---
+
 ## API 接口 (规划)
 
 ### 回看 CRUD

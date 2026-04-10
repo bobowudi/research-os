@@ -198,6 +198,35 @@ pending → preparing → advocate_running → critic_running → judge_running 
 
 ---
 
+## Runtime Backbone 集成
+
+### 统一运行骨架
+
+1. 对抗推理执行 MUST 创建一个 `reasoning` 类型的 runtime run，并在不替代 `reasoning_runs` 业务语义的前提下提供统一运行视图
+2. runtime run MUST 记录 `tenant_id`、`issue_id`、`status`、`input_snapshot`、`output_snapshot`
+3. 涉及模型调用的对抗推理运行 SHOULD 记录 `model`、`token_usage`、`latency_ms`、`estimated_cost`
+
+### 任务拆分
+
+1. 对抗推理执行 MUST 支持映射为可追踪的 runtime tasks
+2. 首批 task 划分 SHOULD 至少覆盖：`prepare_reasoning_context`、`run_preflight`、`run_advocate`、`run_critic`、`extract_reasoning_insights`、`run_judge`、`generate_decision_card`
+3. runtime task MUST 支持读取已完成/未完成步骤，以支持失败后 resume
+
+### Snapshot 与 Artifact
+
+1. reasoning runtime MUST 固化输入 snapshot，至少包含 `issue`、`internalEvidenceIds`、`externalEvidenceIds`、`insightIds`、`preflightLevel`、`promptVersion`、`modelPolicy`
+2. Advocate / Critic / Judge 全量输出 SHOULD 作为 runtime artifacts 登记
+3. DecisionCard 输出 SHOULD 以 artifact 引用形式登记，即使主业务结果仍保留在 `decision_cards` 或 `reasoning_runs` 中
+
+### 事件与恢复
+
+1. reasoning SSE 事件 MUST 可映射到统一 runtime event shape
+2. runtime event 至少 MUST 支持 `status_change`、`progress`、`agent_complete`、`insight_generated`、`completed`、`error`
+3. failed reasoning run SHOULD 支持 task-level resume，并在恢复时跳过已完成 task
+4. 已完成 task 产生的 artifacts MUST 在失败或恢复时保留，不能因重试被隐式丢弃
+
+---
+
 ## API 接口 (规划)
 
 | 方法 | 路径 | 说明 | 权限 |
